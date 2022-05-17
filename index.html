@@ -16,6 +16,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
@@ -67,7 +71,51 @@
         </nav>
       </header>
 
-      <main class="content-main"></main>
+      <main class="content-main">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              Slide 1
+              <div class="swiper-footer">text</div>
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </main>
     </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const art = ["Julius Caesar", "Into the Abyss", "Discobolous"];
+      const price = ["221", "157", "95"];
+      const swiper = new Swiper(".mySwiper", {
+        direction: "vertical",
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: (index, className) => {
+            return (
+              '<p class="' +
+              className +
+              '">' +
+              "#0" +
+              `${index + 1}` +
+              "<span>" +
+              art[index] +
+              "</span>" +
+              "<span>" +
+              (price[index] + "ETH") +
+              "</span>" +
+              "</p>"
+            );
+          },
+        },
+      });
+    </script>
   </body>
 </html>

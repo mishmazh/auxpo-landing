@@ -1,125 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;800&family=Caudex:wght@700&family=Orbitron:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;800&family=Caudex:wght@700&family=Orbitron:wght@700&display=swap");
 
 body {
-    background: linear-gradient(108.76deg, #343131 -1.39%, #1D1919 102.08%);
-    font-family: 'Catamaran', sans-serif;
+  background: linear-gradient(108.76deg, #343131 -1.39%, #1d1919 102.08%);
+  font-family: "Catamaran", sans-serif;
 }
 
 body,
 html {
-    height: 100vh;
+  height: 100vh;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .content {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    grid-template-rows: 98px 1fr;
-    height: 100%;
-    gap: 60px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: 98px 1fr;
+  height: 100%;
+  /* gap: 60px; */
 }
 
 /* ---------- sidebar ---------- */
 .content-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid #505050;
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #505050;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
 }
 
 .content-sidebar__button {
-    display: block;
-    width: 100%;
-    height: 98px;
-    background: linear-gradient(127.44deg, #505050 0%, #383838 100%);
-    border: none;
-    color: #fff;
-    cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 98px;
+  background: linear-gradient(127.44deg, #505050 0%, #383838 100%);
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }
 
 .content-sidebar__list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 60px;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 60px;
 }
 
 .content-sidebar__item {
-    margin-top: 63px;
+  margin-top: 63px;
 }
 
 .content-sidebar__icon {
-    display: block;
-    margin: 0 auto;
-    color: #fff;
+  display: block;
+  margin: 0 auto;
+  color: #fff;
 }
 
 /* ---------- header ---------- */
 .content-header {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 70px;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 70px 0 60px;
 }
 
 .content-header__logo {
-    color: #fff;
-    font-size: 32px;
-    font-weight: bold;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .content-header__list {
-    list-style: none;
-    display: flex;
-    padding-left: 0;
-    align-items: center;
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+  align-items: center;
 }
 
 .content-header__item {
-    margin-left: 67px;
+  margin-left: 67px;
 }
 .content-header__item:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .content-header__link {
-    color: #fff;
-    font-size: 17px;
-    position: relative;
+  color: #fff;
+  font-size: 17px;
+  position: relative;
 }
 .content-header__link::after {
-    content: "";
-    width: 22px;
-    height: 2px;    
-    background-color: #fff;
-    display: block;
-    position: absolute;
-    bottom: -10px;
-    opacity: 0;
-    transition: .2s;
+  content: "";
+  width: 22px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  opacity: 0;
+  transition: 0.2s;
 }
 
 .content-header__link.active {
-    font-weight: 800;
+  font-weight: 800;
 }
 .content-header__link.active::after,
 .content-header__link:hover::after {
-    opacity: 1;
+  opacity: 1;
 }
 
 .content-header__link.wallet {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 /* ---------- main ---------- */
 .content-main {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  color: #fff;
 }
 
+/* ---------- swiper ---------- */
+.swiper {
+  height: calc(100vh - 98px);
+  display: flex;
+}
+
+.swiper-wrapper {
+  position: static;
+  flex-basis: 500px;
+}
+
+.swiper-slide {
+  position: inherit;
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  right: inherit;
+  position: absolute;
+  left: 60px;
+  width: 203px;
+  flex-basis: 203px;
+}
+
+.swiper-pagination-bullet {
+  background: transparent;
+  width: inherit;
+  height: inherit;
+  text-align: left;
+}
+
+.swiper-pagination-bullet span {
+  display: block;
+}
+
+.swiper-pagination-bullet-active {
+  background: transparent;
+}
+
+.swiper-footer {
+  position: absolute;
+  background: #f00;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
