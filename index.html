@@ -22,6 +22,7 @@
     />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
+
   <body>
     <div class="content">
       <div class="content-sidebar">
@@ -75,11 +76,29 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              Slide 1
-              <div class="swiper-footer">text</div>
+              <div class="swiper-body">Slide 1</div>
+              <div class="swiper-footer">
+                <div class="swiper-info">
+                  <p class="swiper-info__author">Maria Roman Generative</p>
+                  <p class="swiper-info__item">Token ID<span>AUXPO#66156</span></p>
+                  <p class="swiper-info__item">Creator<span>Enzo Tribbiani</span></p>
+                  <p class="swiper-info__item">Base Price<span>45 ETH</span></p>
+                  <p class="swiper-info__item">Limit<span>5 per wallet</span></p>
+                  <p class="swiper-info__item">Mint Date<span>5th March 2022</span></p>
+                </div>
+                <div class="swiper-cover">
+                  <img class="swiper-cover__img" src="images/cover.png" alt="">
+                </div>
+              </div>
             </div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">
+              <div class="swiper-body">Slide 2</div>
+              <div class="swiper-footer"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-body">Slide 3</div>
+              <div class="swiper-footer"></div>
+            </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -92,6 +111,10 @@
       const price = ["221", "157", "95"];
       const swiper = new Swiper(".mySwiper", {
         direction: "vertical",
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
         slidesPerView: 1,
         spaceBetween: 30,
         mousewheel: true,
@@ -105,11 +128,11 @@
               '">' +
               "#0" +
               `${index + 1}` +
-              "<span>" +
+              `<span class="pagination-art">` +
               art[index] +
               "</span>" +
-              "<span>" +
-              (price[index] + "ETH") +
+              `<span class="pagination-price">` + "<span>" +
+              (price[index] + "</span>" + " ETH") +
               "</span>" +
               "</p>"
             );
